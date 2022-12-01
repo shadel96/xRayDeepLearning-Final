@@ -79,7 +79,7 @@ Below is a comparison of every model tested in this project as well as their per
 
 ![](./img/model_scores.PNG)
 
-There is also a visualization to give a basic understanding of how our model is identifying the information in each image:
+Additionally, LIME (Local Interpretable Model-Agnostic Explanations) was used to creeate some basic visualizations of how the final model was making predictions on the data:
 
 ![](./img/00-lime_visualizations.png)
 
