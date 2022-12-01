@@ -60,8 +60,8 @@ Another important method was the *Dropout Regularization* step that was taken to
 ## Results
 
 Our baseline model's Accuracy and Loss Visualizations can be seen below:
-![](./img/1-baseline-acc.png)
-![](./img/1-baseline-loss.png)
+![](./img/1-base-acc.png)
+![](./img/1-base-loss.png)
 
 And this is the Confusion Matrix for the same model:
 ![](./img/1-baseline-conf.png)
@@ -75,7 +75,7 @@ The final model chosen based on highest performance, however, produced these res
 
 Below is a comparison of every model tested in this project as well as their performance metrics:
 
-![](./img/model_scores.png)
+![](./img/model_scores.PNG)
 
 There is also a visualization to give a basic understanding of how our model is identifying the information in each image:
 
