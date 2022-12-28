@@ -90,17 +90,39 @@ Additionally, LIME (Local Interpretable Model-Agnostic Explanations) was used to
 
 ## Conclusion
 
+## Model Review
+
+As stated earlier, the primary challenge when analyzing this data is to decide at what point a model's need for __accuracy__ outweighs it's need for __sensitivity(recall)__. This is because, to reiterate for a final time, _every False Negative our model predicts means a potential life lost to Pneumonia_. Our baseline model, technically, was trained well enough to prevent loss of life. A brief look again at it's confusion matrix reaffirms this:
+
+<img src="./img/baseline.png" style="width: 500px;"/> 
+
+This model __excels in sensitivity, but lacks greatly in accuracy__. With only _76 True Negatives_, the baseline model is functionally telling us that almost every x-ray (80% in this case) indicates the need for pneumonia treatment, which is not the case. By comparison, our final model:
+
+<img src="./img/final-conf.png" style="width: 500px;"/> 
+
+The final model __maintains extremely low False Positives__, but increases the accuracy greatly. This model can __much more accurately__ predict True cases of pneumonia, while also _keeping children safe from misdiagnosis_.
+
+
+
+## Real World Application
+
+The final model we have created could be deployed worldwide to save lives. The WHO estimates that __740,180 children died of Pnuemonia in 2019, and only _one third_ of those children had access to the health care they needed.__ 
+
+In other words, __almost 500 thousand children died at least in part because they did not have proper access to diagnosis and care__.
+
+_Médecins Sans Limites_ can help. Based on the success rate of this model, the existence of an organization providing accurate diagnosis, along with the __low cost, low tech medication and care__, could have led to __saving the lives of 483,000 children__ in 2019 alone.
+
+The sooner we can create a system which can deliver necessary care to the parts of the world that need it, and include a Machine Learning model like this one, the more needless death can be prevented.
+
 
 
 ### Next Steps
 
 This model seems to be ready for deployment in the medical fields where it is most needed. However, there are a few other steps that can be taken to supplement this success:
 
-> Additional models could be investigated for similar instances to this one. For example, can we build a model that can accurately predict Pneumonia on other age groups, or perhaps even one model for *all* age groups?
-
-> Additional data collection may help to further improve model performance.
-
-> The model could be adjusted to account for multiple classifications, such as other types of Pneumonia or other illnesses detectable in chest x-rays
+* Additional models could be investigated for similar instances to this one. For example, can we build a model that can accurately predict Pneumonia on other age groups, or perhaps even one model for *all* age groups?
+* Additional data collection may help to further improve model performance, such as our currently slightly lacking precision score.
+* The model could be adjusted to account for multiple classifications, such as other types of Pneumonia or other illnesses detectable in chest x-rays
 
 ***
 
