@@ -15,7 +15,7 @@ This will be particularly useful in developing nations and parts of the world wh
 
 ## Data
 
-The [data for this peoject is from this source on kaggle](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia), and states the following: 
+The [data for this project is from this source on kaggle](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia), and states the following: 
 
 "Chest X-ray images (anterior-posterior) were selected from retrospective cohorts of pediatric patients of one to five years old from Guangzhou Women and Children’s Medical Center, Guangzhou. All chest X-ray imaging was performed as part of patients’ routine clinical care."
 
@@ -24,6 +24,8 @@ The dataset is organized into 3 folders (train, test, val) and contains subfolde
 According to the source of the data:
 
 *"all chest radiographs were initially screened for quality control by removing all low quality or unreadable scans. The diagnoses for the images were then graded by two expert physicians before being cleared for training the AI system. In order to account for any grading errors, the evaluation set was also checked by a third expert."* 
+
+The Data consists of __5,863 Chest X-Rays of patients 1-5 years old__. This consists of __1583 x-rays of patients labeled 'NORMAL', and 4,280 x-rays of patients labeled 'PNEUMONIA'.__ Throughout this project, the data will be used to create __training, validation, and test datasets__ in order to build models that can predict outcomes.
 
 The first step this analysis takes is to create image data generators, which create useable train, test, and validation datasets. Each of these datasets contained 2 classes, **0 and 1** denoting whether the image showed a case labeled as **NORMAL or PNEUMONIA**, respectively.
 
@@ -71,9 +73,9 @@ And this is the Confusion Matrix for the same model:
 
 The final model chosen based on highest performance, however, produced these results:
 
-![](./img/9-final-acc.png)
-![](./img/9-final-loss.png)
-![](./img/9-final-conf.png)
+![](./img/tuning-2acc.png)
+![](./img/tuning-2loss.png)
+![](./img/final-conf.png)
 
 Below is a comparison of every model tested in this project as well as their performance metrics:
 
@@ -87,9 +89,8 @@ Additionally, LIME (Local Interpretable Model-Agnostic Explanations) was used to
 ***
 
 ## Conclusion
-The final model clearly shows a drastic improvement over the baseline, and accurately predicts patient x-rays as having pneumonia while also maintaining a high recall score, thus not misdiagnosing a patient as healthy when they are in critical need of care.
 
-With __91% accuracy__ and __98% recall__ scores, the model easily scores highly enough to be trusted with real world applications, and Medecins Sans Limites should have great success aiding medical professionals and communities in need across the globe.
+
 
 ### Next Steps
 
